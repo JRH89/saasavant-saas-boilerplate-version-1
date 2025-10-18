@@ -22,7 +22,7 @@ export const mockAuth = {
   signOut: jest.fn(async () => {
     mockAuth.currentUser = null
   }),
-  sendPasswordResetEmail: jest.fn(async () => Promise.resolve()),
+  sendPasswordResetEmail: jest.fn(async (email: string) => Promise.resolve()),
 }
 
 // Mock Firestore
@@ -84,12 +84,21 @@ export const mockFirestore = {
         exists: true,
       })),
     })),
-    where: jest.fn(() => ({
+    where: jest.fn((field: string, operator: string, value: any) => ({
       get: jest.fn(async () => ({
         docs: Object.entries(mockData[collectionName] || {}).map(([id, data]) => ({
           id,
           data: () => data,
           exists: true,
+        })),
+      })),
+      where: jest.fn((field2: string, operator2: string, value2: any) => ({
+        get: jest.fn(async () => ({
+          docs: Object.entries(mockData[collectionName] || {}).map(([id, data]) => ({
+            id,
+            data: () => data,
+            exists: true,
+          })),
         })),
       })),
     })),
