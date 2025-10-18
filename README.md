@@ -11,7 +11,7 @@ SaaSavant is a **production-ready, fully TypeScript** SaaS boilerplate designed 
 - **Webhook-Based Subscriptions** - Real-time updates
 - **Firebase Authentication** - Secure user management
 - **Firestore Database** - Scalable data storage
-- **SendGrid Email** - Transactional emails
+- **MailerSend Email** - Transactional emails (12,000/month free)
 - **Next.js 15** - Latest framework with Turbopack
 - **React 19** - Latest React with improved performance
 
@@ -68,7 +68,7 @@ npm install
 cp .env.example .env.local
 
 # 3. Configure your environment variables
-# Edit .env.local with your Firebase, Stripe, and SendGrid credentials
+# Edit .env.local with your Firebase, Stripe, and MailerSend credentials
 
 # 4. Start development server
 npm run dev
@@ -91,7 +91,7 @@ You can run `npm run dev` immediately after installation to preview the landing 
 - **Authentication**: Firebase Auth
 - **Database**: Firestore
 - **Payments**: Stripe (Direct API)
-- **Email**: SendGrid
+- **Email**: MailerSend
 - **Styling**: Tailwind CSS
 - **UI Components**: Lucide Icons, Framer Motion
 - **Testing**: Jest, React Testing Library, Playwright
@@ -174,7 +174,7 @@ See `.env.example` for all required environment variables. Key variables:
 
 - **Firebase**: API keys and project configuration
 - **Stripe**: API keys, price IDs, and webhook secret
-- **SendGrid**: API key and sender email
+- **MailerSend**: API key and sender email
 - **App**: Base URL and pricing
 
 ## Testing

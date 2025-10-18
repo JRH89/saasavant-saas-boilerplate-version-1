@@ -1,9 +1,11 @@
 import { NextRequest, NextResponse } from 'next/server';
-import sendgrid from '@sendgrid/mail';
+import { MailerSend, EmailParams, Sender, Recipient } from 'mailersend';
 import siteMetadata from '../../../../siteMetadata';
 import { format } from 'date-fns';
 
-sendgrid.setApiKey(process.env.NEXT_PUBLIC_SENDGRID_API_KEY!);
+const mailerSend = new MailerSend({
+  apiKey: process.env.MAILERSEND_API_KEY || '',
+});
 
 interface NewsletterRequest {
   emails: string[];
@@ -79,15 +81,21 @@ export async function POST(req: NextRequest) {
         </div>
       `;
 
-      const msg = {
-        to: email,
-        from: process.env.NEXT_PUBLIC_SENDGRID_FROM_EMAIL!,
-        subject: dynamicSubject,
-        html: htmlContent,
-      };
+      const sentFrom = new Sender(
+        process.env.MAILERSEND_FROM_EMAIL!,
+        siteMetadata.title
+      );
+
+      const recipients = [new Recipient(email)];
+
+      const emailParams = new EmailParams()
+        .setFrom(sentFrom)
+        .setTo(recipients)
+        .setSubject(dynamicSubject)
+        .setHtml(htmlContent);
 
       try {
-        await sendgrid.send(msg);
+        await mailerSend.email.send(emailParams);
         responses.push({ email, success: true });
         console.log(`Newsletter sent to: ${email}`);
       } catch (error: any) {

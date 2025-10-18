@@ -5,6 +5,66 @@ All notable changes to SaaSavant will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [2.2.0] - 2025-01-18
+
+### 📧 Email Service Migration - SendGrid → MailerSend
+
+Migrated from SendGrid to MailerSend due to SendGrid removing their free tier. MailerSend offers 12,000 free emails per month.
+
+### Changed
+
+#### Email Service Provider
+- **Removed**: `@sendgrid/mail` package
+- **Added**: `mailersend` package
+- **Migrated**: All email functionality to MailerSend API
+  - `src/app/api/sendWelcomeEmail/route.ts` - Now uses MailerSend
+  - `src/app/api/sendNewsletter/route.ts` - Now uses MailerSend
+
+#### Environment Variables
+- **Removed**:
+  - `NEXT_PUBLIC_SENDGRID_API_KEY`
+  - `NEXT_PUBLIC_SENDGRID_FROM_EMAIL`
+- **Added**:
+  - `MAILERSEND_API_KEY` - MailerSend API token
+  - `MAILERSEND_FROM_EMAIL` - Sender email address
+
+#### Documentation
+- **New File**: `MAILERSEND_SETUP.md` - Complete MailerSend setup guide
+  - Account creation
+  - Domain verification
+  - API token generation
+  - Testing instructions
+  - Production setup
+  - Troubleshooting
+- **Updated**: `README.md` - Changed all SendGrid references to MailerSend
+- **Updated**: `.env.example` - New MailerSend environment variables
+
+### Benefits
+
+- ✅ **12,000 free emails/month** (vs SendGrid's removed free tier)
+- ✅ No credit card required for free tier
+- ✅ Email analytics and tracking included
+- ✅ Template management
+- ✅ Better developer experience
+
+### Migration Guide
+
+For existing users:
+
+1. Create a MailerSend account at https://www.mailersend.com/
+2. Get your API token from the dashboard
+3. Update your `.env.local`:
+   ```env
+   MAILERSEND_API_KEY=mlsn.your_token_here
+   MAILERSEND_FROM_EMAIL=noreply@yourdomain.com
+   ```
+4. Remove old SendGrid variables
+5. Test email functionality
+
+See [MAILERSEND_SETUP.md](./MAILERSEND_SETUP.md) for detailed instructions.
+
+---
+
 ## [2.1.0] - 2025-01-18
 
 ### 🚀 Major Update - Comprehensive Testing, CI/CD, Next.js 15 & React 19
