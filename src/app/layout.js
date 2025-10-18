@@ -81,7 +81,7 @@ export default function RootLayout({ children }) {
         <meta name="twitter:title" content={metadata.twitter.title} />
         <meta name="twitter:description" content={metadata.twitter.description} />
         <meta name="twitter:image" content={metadata.twitter.image} />
-        <link rel="icon" href="/favicon.ico" />
+        <link rel="icon" href={siteMetadata.favicon} />
         <title>{metadata.title}</title>
       </head>
       <body className={twMerge(dmSans.className, "antialiased bg-[#EAEEFE]")}>

@@ -2,13 +2,14 @@
 
 const siteMetadata = {
     title: 'SaaSavant',
-    author: '',
+    author: 'Jared Hooker',
     headerTitle: 'Next.js SaaS Boilerplate',
-    description: '',
+    description: 'A SaaS Boilerplate built with Next.js, Firebase, and Tailwind CSS',
     language: 'en-us',
     theme: 'system',
     siteUrl: 'http://localhost:3000',
     socialBanner: '/cover.png',
+    favicon: '/logo.png',
     email: '',
     github: '',
     blog: '',
