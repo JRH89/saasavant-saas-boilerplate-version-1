@@ -7,24 +7,36 @@ import { twMerge } from 'tailwind-merge'
 const pageData = {
     faqItems: [
         {
-            question: "What is GrowthMaster?",
-            answer: "GrowthMaster is a versatile toolkit designed to enhance your business operations. It integrates with various services for payments, data management, and real-time notifications. GrowthMaster includes pre-built dashboards, customizable email templates, user management features, and is optimized for performance and SEO."
+            question: "What is SaaSavant?",
+            answer: "SaaSavant is a production-ready SaaS boilerplate built with Next.js 14, TypeScript, Firebase, and Stripe. It provides everything you need to launch a subscription-based application including authentication, payment processing, user management, admin dashboard, and email integration."
         },
         {
-            question: "What are the main features of GrowthMaster?",
-            answer: "GrowthMaster offers a comprehensive set of features, including seamless payment integration with ZebraPay, real-time data management with Nimbus, customizable email campaigns with SendGrid, a robust support ticket system, a built-in announcement tool, a pre-designed user and admin dashboard, SEO optimization, and webhook automation for data synchronization."
+            question: "What are the main features?",
+            answer: "SaaSavant includes Stripe subscription management with webhooks and billing portal, Firebase Authentication and Firestore database, SendGrid email integration, admin dashboard for user management and newsletters, TypeScript for type safety, responsive design with TailwindCSS, and SEO optimization with automatic sitemap generation."
         },
         {
-            question: "How do I get started with GrowthMaster?",
-            answer: "To get started, sign up and download GrowthMaster from our website. Follow the setup guide included in the documentation to install dependencies, configure settings, and start building your application."
+            question: "How do I get started?",
+            answer: "Clone the repository, run npm install, create a .env.local file with your Firebase, Stripe, and SendGrid credentials (see .env.example), customize the branding and colors, then deploy to Vercel or your preferred hosting platform. Check SETUP.md for detailed instructions."
         },
         {
-            question: "Can I customize the dashboards?",
-            answer: "Absolutely! The dashboards in GrowthMaster are fully customizable. You can adjust the layout and functionality to meet your specific needs, whether you need to track user activity or manage subscriptions."
+            question: "Can I customize the design and components?",
+            answer: "Yes! All components are built with TailwindCSS and can be easily customized. The color scheme is defined in tailwind.config.ts. You can modify any component to match your brand and requirements."
         },
         {
-            question: "How does GrowthMaster handle SEO?",
-            answer: "GrowthMaster includes built-in SEO optimization features, such as meta tags and content structuring, to improve your application's visibility in search engine results. It also supports automatic sitemap generation to aid in search engine indexing."
+            question: "Do I need to know TypeScript?",
+            answer: "While TypeScript knowledge is helpful, it's not required. The codebase is well-documented and you can use JavaScript for your custom features if preferred. TypeScript provides better developer experience with autocomplete and type checking."
+        },
+        {
+            question: "What's included in the subscription system?",
+            answer: "The boilerplate includes complete Stripe integration with checkout sessions, webhook handlers for real-time updates, billing portal for customers to manage subscriptions, automatic premium status updates, and support for multiple pricing plans (monthly/yearly)."
+        },
+        {
+            question: "Is there an admin dashboard?",
+            answer: "Yes! The admin dashboard allows you to manage users, send newsletters to subscribers, view announcements, and monitor subscription status. Admin access is controlled via the isAdmin flag in the user's Firestore document."
+        },
+        {
+            question: "How secure is the authentication?",
+            answer: "SaaSavant uses Firebase Authentication which provides enterprise-grade security. User passwords are hashed, and all authentication flows follow security best practices. The boilerplate also includes proper session management and protected routes."
         },
     ]
 }

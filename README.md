@@ -1,12 +1,152 @@
-# Welcome to SaaSavant
+# Welcome to SaaSavant v2.0 
 
 ## Overview
 
-SaaSavant is a comprehensive boilerplate designed to accelerate the development of Software as a Service (SaaS) applications. It integrates essential services like Stripe for secure payment processing and subscriptions, Firebase for robust authentication and real-time database storage, and Sendgrid for efficient email handling. With everything pre-configured, you can quickly set up your SaaS platform and focus on customization.
+SaaSavant is a **production-ready, fully TypeScript** SaaS boilerplate designed to accelerate the development of Software as a Service applications. It features:
 
-## Getting Started
+- **Direct Stripe API Integration** - No Firebase extensions required
+- **Full TypeScript Support** - Type-safe throughout
+- **Webhook-Based Subscriptions** - Real-time updates
+- **Firebase Authentication** - Secure user management
+- **Firestore Database** - Scalable data storage
+- **SendGrid Email** - Transactional emails
+- **Next.js 14** - Modern React framework with App Router
 
-Follow the steps outlined in the documentation found [here](https://saasavant-docs.vercel.app).
+## What's New in v2.0
+
+### Major Refactoring
+
+This version includes a **comprehensive refactoring** that eliminates the Firebase Stripe extension dependency and introduces full TypeScript support:
+
+- **Removed Firebase Extension**: Direct Stripe API integration via Next.js API routes
+- **TypeScript Migration**: 100% TypeScript for all critical paths
+- **Webhook Handler**: Custom webhook implementation for subscription management
+- **Improved Architecture**: Better code organization with `/lib` and `/types` directories
+- **Enhanced Security**: Webhook signature verification and proper error handling
+
+### Key Benefits
+
+1. **No Cloud Functions Required** - Reduced complexity and cost
+2. **Full Control** - Direct access to Stripe API
+3. **Type Safety** - Catch errors at compile-time
+4. **Better DX** - Improved developer experience with TypeScript
+5. **Production Ready** - Comprehensive webhook handling
+
+## Documentation
+
+- **[Full Documentation](https://saasavant-docs.vercel.app)** - Complete documentation site
+- **[Quick Setup Guide](./SETUP.md)** - Get started in minutes
+- **[Migration Guide](./MIGRATION_GUIDE.md)** - Detailed migration instructions
+- **[Refactoring Summary](./REFACTORING_SUMMARY.md)** - Complete overview of changes
+
+## Quick Start
+
+```bash
+# 1. Install dependencies
+npm install
+
+# 2. Copy environment variables
+cp .env.example .env.local
+
+# 3. Configure your environment variables
+# Edit .env.local with your Firebase, Stripe, and SendGrid credentials
+
+# 4. Start development server
+npm run dev
+
+# 5. In another terminal, start Stripe webhook forwarding
+stripe listen --forward-to localhost:3000/api/stripe/webhook
+```
+
+Visit `http://localhost:3000` to see your app!
+
+### Preview Without Configuration
+
+You can run `npm run dev` immediately after installation to preview the landing page, about page, and FAQ. However, **authentication, payments, and other features require environment variables** to be configured in `.env.local`. See [SETUP.md](./SETUP.md) for detailed configuration instructions.
+
+## Tech Stack
+
+- **Framework**: Next.js 14 (App Router)
+- **Language**: TypeScript
+- **Authentication**: Firebase Auth
+- **Database**: Firestore
+- **Payments**: Stripe (Direct API)
+- **Email**: SendGrid
+- **Styling**: Tailwind CSS
+- **UI Components**: Lucide Icons, Framer Motion
+
+## Project Structure
+
+```
+src/
+├── app/                      # Next.js app directory
+│   ├── api/                  # API routes
+│   │   └── stripe/
+│   │       ├── webhook/      # Stripe webhook handler
+│   │       ├── create-checkout/
+│   │       └── create-portal/
+│   └── [pages]/              # Application pages
+├── components/               # React components
+│   ├── user/                 # User-related components
+│   ├── payments/             # Payment components
+│   └── landing-page/         # Landing page components
+├── context/                  # React context providers
+├── lib/                      # Utility libraries
+│   └── stripe/               # Stripe utilities
+└── types/                    # TypeScript type definitions
+```
+
+## Environment Variables
+
+See `.env.example` for all required environment variables. Key variables:
+
+- **Firebase**: API keys and project configuration
+- **Stripe**: API keys, price IDs, and webhook secret
+- **SendGrid**: API key and sender email
+- **App**: Base URL and pricing
+
+## Testing
+
+### Test Cards (Stripe)
+
+- **Success**: `4242 4242 4242 4242`
+- **Decline**: `4000 0000 0000 0002`
+- **3D Secure**: `4000 0025 0000 3155`
+
+Use any future expiration date and any 3-digit CVC.
+
+## Deployment
+
+### Vercel (Recommended)
+
+```bash
+vercel --prod
+```
+
+### Other Platforms
+
+```bash
+npm run build
+npm run start
+```
+
+**Important**: Configure your production webhook in Stripe Dashboard and update `STRIPE_WEBHOOK_SECRET`.
+
+## Security
+
+- Webhook signature verification
+- Server-side API key management
+- Firestore security rules
+- Environment variable validation
+- Input sanitization
+
+## Additional Resources
+
+- [SaaSavant Documentation](https://saasavant-docs.vercel.app) - Comprehensive guides and tutorials
+- [Stripe Documentation](https://stripe.com/docs)
+- [Firebase Documentation](https://firebase.google.com/docs)
+- [Next.js Documentation](https://nextjs.org/docs)
+- [TypeScript Documentation](https://www.typescriptlang.org/docs)
 
 # LICENSE
 

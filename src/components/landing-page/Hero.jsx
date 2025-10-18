@@ -11,7 +11,7 @@ import { useEffect } from "react"
 
 // Page Data
 const pageData = {
-    tag: "Version 1.0 is here",
+    tag: "Version 2.0 is here",
     title: "SaaSavant SaaS Boilerplate",
     description: "Spend your time building the features that set your app apart. SaaSavant will take care of everything else.",
     buttons: {

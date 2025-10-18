@@ -11,18 +11,18 @@ import {
 } from "lucide-react";
 
 const pageData = [
-  { icon: CloudLightning, text: "Nimbus Data Sync" },
-  { icon: Compass, text: "Navigator Pro" },
-  { icon: Feather, text: "Quill Editor" },
-  { icon: Music, text: "Harmonic Sound" },
-  { icon: Star, text: "Stellar Reviews" },
-  { icon: Sunrise, text: "Morning Alerts" },
-  { icon: CloudLightning, text: "Nimbus Data Sync" },
-  { icon: Compass, text: "Navigator Pro" },
-  { icon: Feather, text: "Quill Editor" },
-  { icon: Music, text: "Harmonic Sound" },
-  { icon: Star, text: "Stellar Reviews" },
-  { icon: Sunrise, text: "Morning Alerts" }
+  { icon: CloudLightning, text: "Next.js 14" },
+  { icon: Compass, text: "TypeScript" },
+  { icon: Feather, text: "Firebase" },
+  { icon: Music, text: "Stripe" },
+  { icon: Star, text: "SendGrid" },
+  { icon: Sunrise, text: "TailwindCSS" },
+  { icon: CloudLightning, text: "Next.js 14" },
+  { icon: Compass, text: "TypeScript" },
+  { icon: Feather, text: "Firebase" },
+  { icon: Music, text: "Stripe" },
+  { icon: Star, text: "SendGrid" },
+  { icon: Sunrise, text: "TailwindCSS" }
 ];
 
 export const LogoTicker = () => {

@@ -1,97 +1,95 @@
 import Link from 'next/link';
 
 const pageData = {
-    title: "The Ultimate Tool for Growth",
-    intro: "Sign up today and start leveraging our powerful tools. Begin for free, then choose a plan to unlock advanced features and take your application live.",
+    title: "Production-Ready SaaS Boilerplate",
+    intro: "Skip months of setup and start building your SaaS product today. SaaSavant provides a complete, TypeScript-based foundation with authentication, payments, and email integration built-in.",
     buyNowLink: {
         text: "Start Your Journey",
         href: "/Signup",
     },
     whatIs: {
-        title: "What is GrowthMaster?",
-        content: "GrowthMaster is a dynamic toolkit designed to supercharge your business growth. It integrates effortlessly with payment systems, data storage solutions, and real-time notifications. With GrowthMaster, you get pre-built dashboards, customizable email campaigns, user management, support systems, announcement tools, and more—all optimized for peak performance and SEO."
+        title: "What is SaaSavant?",
+        content: "SaaSavant is a production-ready SaaS boilerplate built with Next.js 14, TypeScript, Firebase, and Stripe. It provides everything you need to launch a subscription-based application: authentication, payment processing, user management, admin dashboard, email integration, and more. Focus on building your unique features while we handle the infrastructure."
     },
     keyFeatures: {
         title: "Key Features",
         features: [
-            "ZebraPay Integration: Effortlessly handle transactions and manage subscriptions with ZebraPay.",
-            "Nimbus Data: Manage user authentication and data storage seamlessly with Nimbus.",
-            "Echo Notifications: Enhance user experience with real-time Echo Alerts.",
-            "User-Friendly Dashboard: Monitor user activities and manage subscriptions easily with a pre-built dashboard.",
-            "SEO Enhancement: Boost your application's visibility with built-in SEO optimization.",
-            "Real-Time Syncing: Keep your data accurate with automatic synchronization between payment and data storage services.",
-            "Update Broadcasts: Keep your users informed with a built-in announcement system.",
-            "Support Suite: Manage user queries and issues with an integrated support ticket system.",
-            "Custom Authentication: Streamline user onboarding with pre-built authentication components.",
-            "Subscription Tools: Manage user subscriptions efficiently with built-in tools.",
-            "Webhook Automation: Integrate external services seamlessly with automated webhook management.",
-            "Role Management: Customize user roles and permissions to suit your application.",
-            "Insightful Analytics: Track user behavior and system performance with a built-in analytics dashboard.",
-            "Performance Tweaks: Ensure your application runs smoothly with built-in performance optimizations."
+            "Stripe Integration: Complete subscription management with checkout sessions, webhooks, and billing portal.",
+            "Firebase Backend: Secure authentication and Firestore database for user data and subscriptions.",
+            "Email Automation: SendGrid integration for welcome emails, newsletters, and transactional messages.",
+            "Admin Dashboard: Manage users, send newsletters, view announcements, and monitor subscriptions.",
+            "TypeScript: Fully typed codebase for better developer experience and fewer runtime errors.",
+            "Real-Time Updates: Automatic subscription status updates via Stripe webhooks.",
+            "User Management: Pre-built sign up, sign in, and account management pages.",
+            "Subscription Plans: Flexible pricing with monthly and yearly subscription options.",
+            "Premium Status: Automatic user premium status based on active subscriptions.",
+            "SEO Optimized: Built-in sitemap generation and metadata management.",
+            "Responsive Design: Mobile-first design with TailwindCSS.",
+            "Modern UI: Beautiful components with Lucide icons and Framer Motion animations.",
+            "API Routes: Type-safe Next.js API routes for all backend operations.",
+            "Environment Config: Easy configuration with environment variables."
         ]
     },
     technology: {
-        title: "Technology Behind GrowthMaster",
-        content: "GrowthMaster is built on modern, scalable technologies that ensure your application is reliable, secure, and ready for growth.",
+        title: "Technology Stack",
+        content: "SaaSavant is built with modern, production-ready technologies that ensure your application is scalable, secure, and maintainable.",
         technologies: [
-            "JavaScript, TypeScript, and React: A responsive and dynamic front-end built with JavaScript, TypeScript, and React.",
-            "Next.js: Leverage server-side rendering and static site generation with Next.js for the backend.",
-            "Nimbus: Real-time data storage and authentication powered by Nimbus.",
-            "ZebraPay: Secure payment processing and subscription management with ZebraPay.",
-            "SendGrid: Seamless email and marketing automation with SendGrid.",
-            "Echo Alerts: Real-time notifications to enhance user engagement.",
-            "Vercel Analytics: Optimize performance with integrated analytics tools.",
-            "Vercel Speed Insights: Ensure fast load times and smooth performance.",
-            "tailwindcss: Rapidly build custom UIs with TailwindCSS.",
-            "Framer Motion: Create interactive and responsive UIs with Framer Motion."
+            "Next.js 14: Latest App Router with server-side rendering and static generation.",
+            "TypeScript: Full type safety across the entire codebase.",
+            "React 18: Modern React with hooks and concurrent features.",
+            "Firebase: Authentication with email/password and Firestore for data storage.",
+            "Stripe: Complete payment processing with subscriptions, webhooks, and billing portal.",
+            "SendGrid: Transactional emails and newsletter campaigns.",
+            "TailwindCSS: Utility-first CSS framework for rapid UI development.",
+            "Framer Motion: Smooth animations and transitions.",
+            "Lucide React: Beautiful, consistent icon library.",
+            "Vercel Analytics: Track user behavior and performance metrics.",
+            "Next Sitemap: Automatic sitemap generation for SEO.",
+            "ESLint: Code quality and consistency enforcement."
         ]
     },
     howToUse: {
-        title: "How to Use GrowthMaster",
+        title: "How to Get Started",
         steps: [
-            "Step 1: Environment Setup - Install dependencies and configure your environment using the provided setup guide.",
-            "Step 2: Customize Interface - Tailor the pre-built components and dashboard to match your application’s requirements.",
-            "Step 3: Develop Your App - Add the necessary features and build your application.",
-            "Step 4: Deploy & Test - Deploy your app and test the payment and authentication features to ensure everything works correctly.",
-            "Step 5: Grow Your Business!"
+            "Step 1: Clone & Install - Clone the repository and run npm install to set up dependencies.",
+            "Step 2: Configure Environment - Set up your .env.local file with Firebase, Stripe, and SendGrid credentials.",
+            "Step 3: Customize Branding - Update colors, logos, and content to match your brand.",
+            "Step 4: Build Features - Add your unique features on top of the existing foundation.",
+            "Step 5: Deploy - Deploy to Vercel or your preferred hosting platform and go live!"
         ]
     },
     benefits: {
-        title: "Why GrowthMaster Stands Out",
+        title: "Why Choose SaaSavant?",
         points: [
-            "Accelerated Development: Kickstart your project with a ready-made toolkit, allowing you to focus on unique features.",
-            "Seamless Integrations: Built-in integrations with key services streamline your development process.",
-            "Enhanced UX: Use real-time notifications to keep users informed and engaged.",
-            "SEO-Friendly: Ensure your application reaches its audience with SEO optimizations.",
-            "Reliable Data Management: Keep user data synchronized across all systems with real-time syncing."
+            "Save Months of Development: Skip the boilerplate setup and start building your unique features immediately.",
+            "Production-Ready Code: Battle-tested integrations with Stripe, Firebase, and SendGrid.",
+            "Type-Safe: Full TypeScript coverage reduces bugs and improves developer experience.",
+            "Best Practices: Modern architecture with Next.js 14 App Router and React 18.",
+            "Fully Documented: Comprehensive setup guides and migration documentation included."
         ]
     },
     faq: {
         title: "Frequently Asked Questions (FAQ)",
         questions: [
             {
-                question: "How do I integrate GrowthMaster into my app?",
-                answer: "Integration is simple—just follow the setup guide to configure payment, data storage, email services, and more ",
-                linkText: "here",
-                linkHref: "https://growthmaster-docs.com"
+                question: "How do I set up SaaSavant?",
+                answer: "Follow the SETUP.md guide included in the repository. You'll need to configure Firebase, Stripe, and SendGrid credentials in your .env.local file."
             },
             {
-                question: "Is my data secure with GrowthMaster?",
-                answer: "Absolutely. GrowthMaster uses industry-standard practices for secure data storage and user authentication."
+                question: "Is my data secure?",
+                answer: "Yes. SaaSavant uses Firebase Authentication for secure user management and follows industry best practices for data storage and payment processing."
             },
             {
-                question: "Can I customize the dashboards?",
-                answer: "Yes! The dashboards are fully customizable to meet the specific needs of your application."
+                question: "Can I customize the design?",
+                answer: "Absolutely! All components are built with TailwindCSS and can be easily customized. The color scheme is defined in tailwind.config.ts."
             },
             {
-                question: "How does GrowthMaster benefit my project?",
-                answer: "GrowthMaster provides essential features out-of-the-box, allowing you to focus on your application’s unique value proposition."
+                question: "What's included in the boilerplate?",
+                answer: "Authentication, subscription management, payment processing, admin dashboard, email integration, user management, and more. Check the REFACTORING_SUMMARY.md for details."
             },
             {
-                question: "Where can I get help?",
-                answer: "Support is available through our documentation and customer service team. Reach out to us ",
-                linkText: "here",
-                linkHref: "mailto:support@growthmaster.com"
+                question: "Do I need to know TypeScript?",
+                answer: "While TypeScript knowledge is helpful, the codebase is well-documented. You can also use JavaScript for your custom features if preferred."
             }
         ]
     }

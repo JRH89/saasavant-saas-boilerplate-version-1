@@ -17,6 +17,7 @@ const pageData = {
   menuItems: [
     { text: 'Price', href: '/#price' },
     { text: 'FAQ', href: '/FAQ' },
+    { text: 'Docs', href: 'https://saasavant-docs.vercel.app', isExternal: true },
     { text: 'Learn More', href: '/About' },
     { text: 'Start Now', href: '/Signup', isPrimary: true }
   ],
@@ -60,7 +61,7 @@ export const Header = () => {
             {/* Desktop Menu */}
             <nav className='hidden font-bold md:flex gap-6 text-black/60 items-center'>
               {pageData.menuItems.map((item, index) => (
-                <Link key={index} href={item.href} className={item.isPrimary ? 'bg-confirm shadow-md font-bold shadow-black hover:shadow-lg hover:shadow-black duration-300 text-black px-4 py-2 rounded-lg inline-flex tracking-tight' : 'hover:pb-2 duration-300'}>
+                <Link key={index} href={item.href} className={item.isPrimary ? 'bg-confirm shadow-md font-bold shadow-black hover:shadow-lg hover:shadow-black duration-300 text-black px-4 py-2 rounded-lg inline-flex tracking-tight' : 'hover:pb-2 duration-300'} {...(item.isExternal && { target: '_blank', rel: 'noopener noreferrer' })}>
                   {item.text}
                 </Link>
               ))}
@@ -78,7 +79,7 @@ export const Header = () => {
             style={{ zIndex: 10 }}
           >
             {pageData.menuItems.map((item, index) => (
-              <Link key={index} href={item.href} className={item.isPrimary ? 'bg-confirm text-black px-4 py-2 rounded-lg font-bold inline-flex tracking-tight shadow-md shadow-black hover:shadow-lg hover:shadow-black duration-300' : 'hover:pr-2 duration-300'} onClick={toggleMenu}>
+              <Link key={index} href={item.href} className={item.isPrimary ? 'bg-confirm text-black px-4 py-2 rounded-lg font-bold inline-flex tracking-tight shadow-md shadow-black hover:shadow-lg hover:shadow-black duration-300' : 'hover:pr-2 duration-300'} onClick={toggleMenu} {...(item.isExternal && { target: '_blank', rel: 'noopener noreferrer' })}>
                 {item.text}
               </Link>
             ))}

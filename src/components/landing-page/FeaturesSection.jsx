@@ -18,33 +18,33 @@ const pageData = {
 // Feature Data
 const features = [
     {
-        title: 'QuickFox Emails',
-        description: 'Experience lightning-fast email delivery with QuickFox, your go-to solution for communication.',
+        title: 'Email Integration',
+        description: 'SendGrid integration for transactional emails, welcome messages, and newsletter campaigns.',
         icon: Mail,
     },
     {
-        title: 'ZebraPay Integration',
-        description: 'Handle payments effortlessly with ZebraPay, ensuring secure and smooth transactions every time.',
+        title: 'Stripe Payments',
+        description: 'Complete Stripe integration with subscriptions, webhooks, and billing portal management.',
         icon: CreditCard,
     },
     {
-        title: 'Nimbus Data',
-        description: 'Store your data with Nimbus, providing real-time access and robust security for all your needs.',
+        title: 'Firebase Backend',
+        description: 'Firebase Authentication and Firestore database for secure user management and data storage.',
         icon: Database,
     },
     {
-        title: 'Echo Alerts',
-        description: 'Stay informed with Echo Alerts, delivering instant notifications that keep you updated in real time.',
+        title: 'Real-time Updates',
+        description: 'Live subscription status updates and instant notifications for payment events.',
         icon: Bell,
     },
     {
-        title: 'Support Desk',
-        description: 'Resolve issues quickly with our Support Desk, designed to manage requests and enhance user satisfaction.',
+        title: 'TypeScript Ready',
+        description: 'Fully typed codebase with TypeScript for better developer experience and fewer bugs.',
         icon: Bug,
     },
     {
-        title: 'Broadcast Center',
-        description: 'Communicate efficiently with Broadcast Center, sending important updates to all users simultaneously.',
+        title: 'Admin Dashboard',
+        description: 'Built-in admin panel for managing users, sending newsletters, and viewing analytics.',
         icon: Megaphone,
     },
 
