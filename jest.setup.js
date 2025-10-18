@@ -1,31 +1,83 @@
 import '@testing-library/jest-dom'
 
-// Mock Next.js router
+// Mock Next.js App Router (next/navigation for App Router)
 jest.mock('next/navigation', () => ({
-  useRouter() {
-    return {
-      push: jest.fn(),
-      replace: jest.fn(),
-      prefetch: jest.fn(),
-      back: jest.fn(),
-      pathname: '/',
-      query: {},
-      asPath: '/',
-    }
-  },
-  usePathname() {
-    return '/'
-  },
-  useSearchParams() {
-    return new URLSearchParams()
-  },
+  useRouter: jest.fn(() => ({
+    push: jest.fn(),
+    replace: jest.fn(),
+    prefetch: jest.fn(),
+    back: jest.fn(),
+    forward: jest.fn(),
+    refresh: jest.fn(),
+  })),
+  usePathname: jest.fn(() => '/'),
+  useSearchParams: jest.fn(() => new URLSearchParams()),
+  useParams: jest.fn(() => ({})),
+  redirect: jest.fn(),
+  notFound: jest.fn(),
 }))
 
 // Mock Firebase
+const mockApp = {
+  name: '[DEFAULT]',
+  options: {},
+  automaticDataCollectionEnabled: false,
+}
+
+const mockAuth = {
+  app: mockApp,
+  currentUser: null,
+  onAuthStateChanged: jest.fn((callback) => {
+    callback(null)
+    return jest.fn() // unsubscribe
+  }),
+  signInWithEmailAndPassword: jest.fn(),
+  createUserWithEmailAndPassword: jest.fn(),
+  signOut: jest.fn(),
+  sendPasswordResetEmail: jest.fn(),
+}
+
+const mockFirestore = {
+  app: mockApp,
+}
+
 jest.mock('./firebase', () => ({
-  initFirebase: jest.fn(() => ({})),
-  db: {},
-  auth: {},
+  initFirebase: jest.fn(() => mockApp),
+  db: mockFirestore,
+  auth: mockAuth,
+}))
+
+jest.mock('firebase/app', () => ({
+  initializeApp: jest.fn(() => mockApp),
+  getApp: jest.fn(() => mockApp),
+  getApps: jest.fn(() => [mockApp]),
+}))
+
+jest.mock('firebase/auth', () => ({
+  getAuth: jest.fn(() => mockAuth),
+  signInWithEmailAndPassword: jest.fn(),
+  createUserWithEmailAndPassword: jest.fn(),
+  signOut: jest.fn(),
+  sendPasswordResetEmail: jest.fn(),
+  onAuthStateChanged: jest.fn((auth, callback) => {
+    callback(null)
+    return jest.fn()
+  }),
+}))
+
+jest.mock('firebase/firestore', () => ({
+  getFirestore: jest.fn(() => mockFirestore),
+  collection: jest.fn(),
+  doc: jest.fn(),
+  getDoc: jest.fn(),
+  getDocs: jest.fn(),
+  addDoc: jest.fn(),
+  updateDoc: jest.fn(),
+  deleteDoc: jest.fn(),
+  query: jest.fn(),
+  where: jest.fn(),
+  orderBy: jest.fn(),
+  limit: jest.fn(),
 }))
 
 // Mock environment variables
