@@ -1,4 +1,4 @@
-# Welcome to SaaSavant v2.0 
+# Welcome to SaaSavant v2.1 🚀
 
 ## Overview
 
@@ -6,13 +6,29 @@ SaaSavant is a **production-ready, fully TypeScript** SaaS boilerplate designed 
 
 - **Direct Stripe API Integration** - No Firebase extensions required
 - **Full TypeScript Support** - Type-safe throughout
+- **Comprehensive Test Suite** - 148 tests covering all critical paths
+- **Automated CI/CD** - GitHub Actions pipeline
 - **Webhook-Based Subscriptions** - Real-time updates
 - **Firebase Authentication** - Secure user management
 - **Firestore Database** - Scalable data storage
 - **SendGrid Email** - Transactional emails
-- **Next.js 14** - Modern React framework with App Router
+- **Next.js 15** - Latest framework with Turbopack
+- **React 19** - Latest React with improved performance
 
-## What's New in v2.0
+## What's New in v2.1
+
+### Comprehensive Testing & CI/CD
+- **148 Tests**: Unit, integration, and E2E tests covering all critical functionality
+- **Automated CI/CD**: GitHub Actions pipeline with 7 jobs
+- **Database Seeding**: Quick setup with test data
+- **Test Documentation**: Complete guides for writing and running tests
+
+### Framework Upgrades
+- **Next.js 15.5.6**: Latest version with Turbopack dev mode
+- **React 19.2.0**: Latest React with new hooks and better performance
+- **Improved DX**: Faster builds, better error messages, enhanced tooling
+
+### What's New in v2.0
 
 ### Major Refactoring
 
@@ -36,8 +52,11 @@ This version includes a **comprehensive refactoring** that eliminates the Fireba
 
 - **[Full Documentation](https://saasavant-docs.vercel.app)** - Complete documentation site
 - **[Quick Setup Guide](./SETUP.md)** - Get started in minutes
+- **[Testing Guide](./TESTING.md)** - Comprehensive testing documentation
+- **[Quick Start Testing](./QUICK_START_TESTING.md)** - 5-minute testing guide
 - **[Migration Guide](./MIGRATION_GUIDE.md)** - Detailed migration instructions
 - **[Refactoring Summary](./REFACTORING_SUMMARY.md)** - Complete overview of changes
+- **[Changelog](./CHANGELOG.md)** - Version history and changes
 
 ## Quick Start
 
@@ -66,14 +85,50 @@ You can run `npm run dev` immediately after installation to preview the landing 
 
 ## Tech Stack
 
-- **Framework**: Next.js 14 (App Router)
+- **Framework**: Next.js 15.5.6 (App Router + Turbopack)
 - **Language**: TypeScript
+- **UI Library**: React 19.2.0
 - **Authentication**: Firebase Auth
 - **Database**: Firestore
 - **Payments**: Stripe (Direct API)
 - **Email**: SendGrid
 - **Styling**: Tailwind CSS
 - **UI Components**: Lucide Icons, Framer Motion
+- **Testing**: Jest, React Testing Library, Playwright
+- **CI/CD**: GitHub Actions
+
+## Testing
+
+SaaSavant includes a comprehensive test suite with **148 tests** covering all critical functionality:
+
+```bash
+# Run all tests
+npm test
+
+# Run tests with coverage
+npm run test:ci
+
+# Run specific test suites
+npm run test:unit          # Unit tests (125 tests)
+npm run test:integration   # Integration tests (23 tests)
+npm run test:e2e          # E2E tests (Playwright)
+
+# Seed test data
+npm run seed:dev          # Quick dev seeding
+npm run seed              # Full production seeding
+```
+
+### What's Tested
+- ✅ Authentication flows (sign up, sign in, password reset)
+- ✅ Subscription lifecycle (checkout, billing, cancellation)
+- ✅ Payment processing (success, failure, renewal)
+- ✅ Webhook handling (all Stripe events)
+- ✅ Support ticket system (CRUD operations)
+- ✅ Account deletion (complete data cleanup)
+- ✅ API routes (checkout, portal, webhooks)
+- ✅ Integration flows (complete user journeys)
+
+See [TESTING.md](./TESTING.md) for comprehensive testing documentation.
 
 ## Project Structure
 
@@ -94,6 +149,23 @@ src/
 ├── lib/                      # Utility libraries
 │   └── stripe/               # Stripe utilities
 └── types/                    # TypeScript type definitions
+
+__tests__/                    # Test suite
+├── unit/                     # Unit tests (125 tests)
+│   ├── auth/                 # Authentication tests
+│   ├── subscriptions/        # Subscription tests
+│   ├── support/              # Support ticket tests
+│   ├── account/              # Account management tests
+│   ├── api/                  # API route tests
+│   └── lib/                  # Utility tests
+├── integration/              # Integration tests (23 tests)
+├── e2e/                      # E2E tests (Playwright)
+├── mocks/                    # Firebase & Stripe mocks
+└── utils/                    # Test utilities
+
+scripts/                      # Utility scripts
+├── seed.js                   # Production database seeding
+└── seed-dev.js               # Development seeding
 ```
 
 ## Environment Variables

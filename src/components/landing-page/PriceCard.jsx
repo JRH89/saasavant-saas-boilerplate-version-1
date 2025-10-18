@@ -1,6 +1,6 @@
 'use client'
 
-import CheckIcon from "../../assets/check.svg";
+import { Check } from "lucide-react";
 import { twMerge } from "tailwind-merge";
 import { motion } from "framer-motion";
 import Link from "next/link";
@@ -122,7 +122,7 @@ export const PriceCard = () => {
                             <ul className="flex flex-col w-full gap-2 mt-8 sm:grid sm:grid-cols-2">
                                 {tier.features.map((feature, featureIndex) =>
                                     <li key={featureIndex} className="capitalize text-sm flex items-center gap-1">
-                                        <CheckIcon className="w-6 h-6 text-destructive" />
+                                        <Check className="w-6 h-6 text-destructive" />
                                         <span className="text-confirm font-medium flex-1">{feature}</span>
                                     </li>
                                 )}

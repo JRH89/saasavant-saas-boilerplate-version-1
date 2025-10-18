@@ -1,6 +1,6 @@
 "use client"
 
-import ArrowRight from '../../assets/arrow-right.svg'
+import { ArrowRight } from 'lucide-react'
 import Link from "next/link"
 
 export const CallToAction = () => {

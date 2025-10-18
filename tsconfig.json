@@ -25,9 +25,14 @@
     "strictNullChecks": true,
     "baseUrl": ".",
     "paths": {
-      "@/*": ["./src/*"]
+      "@/*": [
+        "./src/*"
+      ]
     },
-    "types": ["node"]
+    "types": [
+      "node"
+    ],
+    "target": "ES2017"
   },
   "include": [
     "next-env.d.ts",
@@ -42,5 +47,5 @@
   ],
   "exclude": [
     "node_modules"
-  ],
+  ]
 }

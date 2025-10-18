@@ -63,7 +63,7 @@ const AllTheProviders = ({ children }: AllTheProvidersProps) => {
 }
 
 const customRender = (
-  ui: ReactElement,
+  ui: ReactElement<any>,
   options?: Omit<RenderOptions, 'wrapper'>,
 ) => render(ui, { wrapper: AllTheProviders, ...options })
 

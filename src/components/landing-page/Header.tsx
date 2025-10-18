@@ -1,10 +1,9 @@
 'use client'
 
 import React, { useState } from 'react';
-import ArrowRight from '../../assets/arrow-right.svg';
+import { ArrowRight, Menu } from 'lucide-react';
 import Logo from '../../../public/logo.png';
 import Image from 'next/image';
-import MenuIcon from '../../assets/menu.svg';
 import Link from 'next/link';
 import { motion } from 'framer-motion';
 
@@ -56,7 +55,7 @@ export const Header = () => {
               />
             </Link>
             <div className="md:hidden hover:text-confirm duration-300" onClick={toggleMenu}>
-              <MenuIcon className="h-10 w-10 " />
+              <Menu className="h-10 w-10 " />
             </div>
             {/* Desktop Menu */}
             <nav className='hidden font-bold md:flex gap-6 text-black/60 items-center'>
@@ -68,12 +67,12 @@ export const Header = () => {
             </nav>
           </div>
           {/* Mobile Menu */}
-          <motion.nav
+          <motion.div
             initial={{ opacity: 0, y: -100 }}
             animate={{ opacity: isMenuOpen ? 1 : 0, y: isMenuOpen ? 0 : -100 }}
             transition={{
               opacity: { duration: 0.7 },
-              y: { duration: 1, ease: [0.42, 0, 0.58, 1], type: 'easeInOut' }, // Smooth easing for both up and down
+              y: { duration: 1, ease: [0.42, 0, 0.58, 1] }, // Smooth easing for both up and down
             }}
             className={`md:hidden sticky w-full h-full text-black flex flex-col items-center justify-center font-bold space-y-4 ${isMenuOpen ? 'sticky' : 'hidden'}`}
             style={{ zIndex: 10 }}
@@ -83,7 +82,7 @@ export const Header = () => {
                 {item.text}
               </Link>
             ))}
-          </motion.nav>
+          </motion.div>
         </div>
       </div>
     </header>

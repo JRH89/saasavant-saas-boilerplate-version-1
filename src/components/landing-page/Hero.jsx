@@ -1,9 +1,8 @@
 'use client'
 
 import Link from "next/link"
-import { LogIn } from "lucide-react"
+import { LogIn, ArrowRight } from "lucide-react"
 import { useAuth } from "../../context/AuthProvider"
-import ArrowIcon from "../../assets/arrow-right.svg"
 import Image from "next/image"
 import { LogoTicker } from "./LogoTicker"
 import heroImage from "../../../public/preview.png"
@@ -56,18 +55,18 @@ const Hero = () => {
                     </div>
                     <div className="mt-4 flex gap-2">
                         {Object.entries(buttonConfig).map(([key, button]) => (
-                            <Link legacyBehavior key={button.text} href={button.href}>
-                                <a
-                                    className={`btn ${key === "primary" ? "btn-primary bg-confirm shadow-md shadow-black text-black hover:shadow-lg hover:shadow-black duration-300" : "btn-text"} 
-                                        text-sm sm:text-lg md:text-xl lg:text-2xl 
-                                        font-semibold flex items-center gap-2 
-                                       hover:opacity-60 duration-300`}
-                                >
-                                    {key === "primary" && button.text === "Dashboard" && <LogIn className="h-5 w-5" />}
-                                    {key === "primary" && button.text === "Get Started Now" && <LogIn className="h-5 w-5" />}
-                                    {button.text}
-                                    {key === "secondary" && <ArrowIcon className="h-5 w-5" />}
-                                </a>
+                            <Link 
+                                key={button.text} 
+                                href={button.href}
+                                className={`btn ${key === "primary" ? "btn-primary bg-confirm shadow-md shadow-black text-black hover:shadow-lg hover:shadow-black duration-300" : "btn-text"} 
+                                    text-sm sm:text-lg md:text-xl lg:text-2xl 
+                                    font-semibold flex items-center gap-2 
+                                   hover:opacity-60 duration-300`}
+                            >
+                                {key === "primary" && button.text === "Dashboard" && <LogIn className="h-5 w-5" />}
+                                {key === "primary" && button.text === "Get Started Now" && <LogIn className="h-5 w-5" />}
+                                {button.text}
+                                {key === "secondary" && <ArrowRight className="h-5 w-5" />}
                             </Link>
                         ))}
                     </div>
