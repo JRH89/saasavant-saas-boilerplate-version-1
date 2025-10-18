@@ -58,30 +58,19 @@ This version includes a **comprehensive refactoring** that eliminates the Fireba
 - **[Refactoring Summary](./REFACTORING_SUMMARY.md)** - Complete overview of changes
 - **[Changelog](./CHANGELOG.md)** - Version history and changes
 
-## Quick Start
+## Getting Started
 
-```bash
-# 1. Install dependencies
-npm install
+For complete setup instructions, please visit our comprehensive documentation at:
 
-# 2. Copy environment variables
-cp .env.example .env.local
+**[https://saasavant-docs.vercel.app/](https://saasavant-docs.vercel.app/)**
 
-# 3. Configure your environment variables
-# Edit .env.local with your Firebase, Stripe, and MailerSend credentials
-
-# 4. Start development server
-npm run dev
-
-# 5. In another terminal, start Stripe webhook forwarding
-stripe listen --forward-to localhost:3000/api/stripe/webhook
-```
-
-Visit `http://localhost:3000` to see your app!
-
-### Preview Without Configuration
-
-You can run `npm run dev` immediately after installation to preview the landing page, about page, and FAQ. However, **authentication, payments, and other features require environment variables** to be configured in `.env.local`. See [SETUP.md](./SETUP.md) for detailed configuration instructions.
+The documentation includes:
+- Step-by-step setup guide
+- Environment configuration
+- Firebase setup
+- Stripe integration
+- MailerSend configuration
+- Deployment instructions
 
 ## Tech Stack
 
@@ -256,7 +245,7 @@ This Agreement shall be governed by and construed in accordance with the laws of
 7. Entire Agreement
 This Agreement constitutes the entire agreement between Licensee and SaaSavant concerning the subject matter herein and supersedes all prior or contemporaneous agreements, representations, warranties, and understandings.
 
-Last updated:09/1/2024
+Last updated:10/18/2025
 
 SaaSavant
 Contact Information: hookerhillstudios@gmail.com
