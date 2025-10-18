@@ -5,6 +5,62 @@ All notable changes to SaaSavant will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [2.2.1] - 2025-01-18
+
+### 🧹 Bug Fixes & Code Cleanup
+
+This patch release fixes React 19 compatibility issues and removes duplicate files from the TypeScript migration.
+
+### Fixed
+
+#### React 19 Compatibility
+- **Fixed**: SVG imports causing "Element type is invalid" errors
+  - Replaced all SVG file imports with Lucide React icons
+  - `ArrowRight`, `Menu`, `Check` icons now use Lucide React
+  - Affected files: `Header.tsx`, `Hero.jsx`, `CallToAction.tsx`, `PriceCard.jsx`
+- **Fixed**: Deprecated `legacyBehavior` prop in Link components
+  - Updated `Hero.jsx` to use modern Next.js 15 Link syntax
+  - Removed nested `<a>` tags from Link components
+- **Fixed**: Framer Motion compatibility with React 19
+  - Updated transition configuration
+  - Removed invalid `type: 'easeInOut'` property
+  - Changed `motion.nav` to `motion.div` in Header component
+
+#### Code Cleanup
+- **Removed**: Duplicate JavaScript files from TypeScript migration
+  - `firebase.js` (kept `firebase.ts`)
+  - `src/context/AuthProvider.jsx` (kept `.tsx`)
+  - `src/components/user/AccountPage.jsx` (kept `.tsx`)
+  - `src/components/user/SignIn.jsx` (kept `.tsx`)
+  - `src/components/user/SignUp.jsx` (kept `.tsx`)
+  - `src/components/user/SubscriptionSection.jsx` (kept `.tsx`)
+- **Result**: Cleaner codebase with only TypeScript versions of core components
+
+#### Security
+- **Fixed**: Environment variable exposure
+  - Removed `NEXT_PUBLIC_` prefix from old SendGrid keys
+  - Ensured all sensitive API keys are server-only
+  - Verified Firebase public keys are correctly exposed (by design)
+
+### Added
+
+- **Added**: Missing `axios` dependency for Newsletter component
+
+### Changed
+
+- **Updated**: `package.json` - Added axios dependency
+- **Updated**: Framer Motion to latest version for React 19 compatibility
+
+### Verified
+
+- ✅ All 148 tests passing
+- ✅ Production build successful
+- ✅ No TypeScript errors
+- ✅ No duplicate files
+- ✅ All environment variables properly configured
+
+---
+
 ## [2.2.0] - 2025-01-18
 
 ### 📧 Email Service Migration - SendGrid → MailerSend

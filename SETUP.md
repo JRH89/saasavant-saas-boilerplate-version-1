@@ -6,7 +6,7 @@
 - npm or yarn package manager
 - Stripe account
 - Firebase project
-- SendGrid account
+- MailerSend account (free tier: 12,000 emails/month)
 
 ## Installation Steps
 
@@ -40,9 +40,9 @@ NEXT_PUBLIC_MONTHLY_PRICE_ID=price_xxx
 NEXT_PUBLIC_YEARLY_PRICE_ID=price_xxx
 STRIPE_WEBHOOK_SECRET=whsec_xxx
 
-# SendGrid Configuration
-NEXT_PUBLIC_SENDGRID_API_KEY=SG.xxx
-NEXT_PUBLIC_SENDGRID_FROM_EMAIL=noreply@yourdomain.com
+# MailerSend Configuration
+MAILERSEND_API_KEY=mlsn.xxx
+MAILERSEND_FROM_EMAIL=noreply@yourdomain.com
 
 # Application Configuration
 NEXT_PUBLIC_MONTHLY_PRICE=9.99
@@ -108,12 +108,19 @@ service cloud.firestore {
 1. Go to Firebase Console → Authentication
 2. Enable Email/Password sign-in method
 
-### 5. SendGrid Setup
+### 5. MailerSend Setup
 
-1. Create a SendGrid account
-2. Verify a sender email address
-3. Create an API key with "Mail Send" permissions
+1. Create a MailerSend account at https://www.mailersend.com/
+2. Get your API token from Dashboard → API Tokens
+3. (Optional) Verify your domain for production use
 4. Add to `.env.local`
+
+**For detailed setup instructions**, see [MAILERSEND_SETUP.md](./MAILERSEND_SETUP.md)
+
+**Quick Start (Development)**:
+- Use the trial domain provided by MailerSend
+- No domain verification needed for testing
+- Free tier: 12,000 emails/month
 
 ### 6. Run Development Server
 
@@ -231,10 +238,12 @@ npm install
 ## Support
 
 - **Full Documentation**: https://saasavant-docs.vercel.app - Comprehensive guides and tutorials
+- **MailerSend Setup**: See `MAILERSEND_SETUP.md` for email configuration
 - **Migration Guide**: See `MIGRATION_GUIDE.md` for detailed information
 - **Stripe Docs**: https://stripe.com/docs
 - **Firebase Docs**: https://firebase.google.com/docs
 - **Next.js Docs**: https://nextjs.org/docs
+- **MailerSend Docs**: https://developers.mailersend.com/
 
 ---
 

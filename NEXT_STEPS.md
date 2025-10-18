@@ -2,10 +2,13 @@
 
 ## ✅ Refactoring Complete!
 
-Your SaaSavant boilerplate has been successfully refactored to v2.0 with:
+Your SaaSavant boilerplate has been successfully upgraded to v2.2.1 with:
 - Full TypeScript support
 - Direct Stripe API integration
 - Custom webhook handler
+- MailerSend email service (12,000 free emails/month)
+- Next.js 15 & React 19
+- Comprehensive test suite (148 tests)
 - Improved architecture and code quality
 
 ## 🚀 Immediate Actions Required
@@ -31,7 +34,7 @@ cp .env.example .env.local
 Then edit `.env.local` with your actual credentials:
 - Firebase configuration
 - Stripe API keys and price IDs
-- SendGrid API key
+- MailerSend API key
 - Webhook secret (see step 3)
 
 ### 3. Configure Stripe Webhook
@@ -77,10 +80,12 @@ Before deploying to production:
 - [ ] Stripe products and prices created
 - [ ] Production webhook configured in Stripe Dashboard
 - [ ] Firestore security rules updated
-- [ ] SendGrid sender email verified
+- [ ] MailerSend account created and API token configured
+- [ ] MailerSend domain verified (for production)
 - [ ] Test complete checkout flow
 - [ ] Test subscription management
 - [ ] Test webhook events
+- [ ] Test email sending (welcome emails, newsletters)
 - [ ] Remove old Firebase extension (if applicable)
 
 ## 🔧 Configuration Details
@@ -139,8 +144,11 @@ Create two products in your Stripe Dashboard:
 ## 📚 Documentation Reference
 
 - **[SETUP.md](./SETUP.md)** - Detailed setup instructions
+- **[MAILERSEND_SETUP.md](./MAILERSEND_SETUP.md)** - MailerSend email configuration
 - **[MIGRATION_GUIDE.md](./MIGRATION_GUIDE.md)** - Complete migration guide
 - **[REFACTORING_SUMMARY.md](./REFACTORING_SUMMARY.md)** - What changed and why
+- **[TESTING.md](./TESTING.md)** - Comprehensive testing guide
+- **[CHANGELOG.md](./CHANGELOG.md)** - Version history
 
 ## 🎯 Key Improvements
 
@@ -273,5 +281,5 @@ Your codebase is now:
 
 ---
 
-**Version:** 2.0.0  
-**Last Updated:** December 2024
+**Version:** 2.2.1  
+**Last Updated:** January 2025
