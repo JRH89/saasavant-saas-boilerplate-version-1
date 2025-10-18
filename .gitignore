@@ -2,4 +2,24 @@
 .next
 .env.local
 .env
+.env.test
 node_modules
+
+# Testing
+coverage
+.nyc_output
+playwright-report
+test-results
+*.log
+
+# Firebase
+firebase-service-account.json
+firebase-service-account-test.json
+.firebase
+
+# IDE
+.vscode
+.idea
+*.swp
+*.swo
+*~
