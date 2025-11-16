@@ -1,4 +1,4 @@
-# Welcome to SaaSavant v2.2.1 🚀
+# Welcome to SaaSavant v2.2.1
 
 ## Overview
 
